@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
-
+use App\Models\ProductReview;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,25 @@ use App\Models\Product;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Review Index
+Route::get('/product_review', [ProductReviewController::class, 'index']);
+
+// create Review
+Route::post('/product_review/create', [ProductReviewController::class, 'store']);
+
+//  Show Review
+Route::get('/product_review/show/{id}', [ProductReviewController::class, 'show']);
+
+// update revire
+Route::get('/product_review/update', [ProductReviewController::class, 'store']);
+
+// Delete Review
+Route::delete('/product_review/delete', [ProductReviewController::class, 'delete']);
+
+
+
+
 
 Route::get('/products', [ProductController::class, 'index'])->name('product_index');
 
