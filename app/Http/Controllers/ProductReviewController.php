@@ -53,7 +53,8 @@ class ProductReviewController extends Controller
      */
     public function show($id)
     {
-        //
+        //find single product review
+        
     }
 
     /**
