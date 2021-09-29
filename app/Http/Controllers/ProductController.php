@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::paginate(10);
+        return Product::paginate(5);
     }
 
     /**
@@ -71,6 +71,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        // dd('something');
         $product->delete();
     }
 

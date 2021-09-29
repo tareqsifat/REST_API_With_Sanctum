@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/product/{id}', [ProductController::class, 'destroy'])->name('product_delete_web');
